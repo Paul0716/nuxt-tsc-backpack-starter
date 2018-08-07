@@ -1,4 +1,4 @@
-# vue2_koa2_nuxt_ssr
+# RCT.MgPlusApp
 
 > A vue project with koa2 and nuxt for ssr.
 
