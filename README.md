@@ -1,6 +1,7 @@
 # RCT.MgPlusApp
 
-> A vue project with koa2 and nuxt for ssr.
+> A vue project with koa2 and nuxt for ssr, and unit-testing by jest.
+
 
 ## Build Setup
 
@@ -14,6 +15,10 @@ $ npm run dev
 # build for production and launch server
 $ npm run build
 $ npm start
+
+# unit-testing
+$ npm run test
+$ npm run watch (jest watching)
 ```
 
 *Note: Due to a bug in yarn's engine version detection code if you are
