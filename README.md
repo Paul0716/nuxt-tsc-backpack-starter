@@ -14,9 +14,6 @@ $ npm run dev
 # build for production and launch server
 $ npm run build
 $ npm start
-
-# generate static project
-$ npm run generate
 ```
 
 *Note: Due to a bug in yarn's engine version detection code if you are

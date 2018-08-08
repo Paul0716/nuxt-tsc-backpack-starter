@@ -1,12 +1,12 @@
 import Koa from 'koa'
 import path from 'path'
-//import Log4js from 'koa-log4'
+import Log4js from 'koa-log4'
 import AutoRoutes from './autoRoutes'
 import logConfig from '../config/log4js'
 
 import {Nuxt, Builder} from 'nuxt'
 const app = new Koa()
-//const logger = Log4js.getLogger('app')
+const logger = Log4js.getLogger('app')
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000
 
@@ -15,7 +15,7 @@ let config = require('../nuxt.config.js')
 config.dev = !(app.env === 'production')
 
 // 生成logs目录 && 加载配置文件 start
-/*const logPath = path.join(__dirname, 'logs')
+const logPath = path.join(__dirname, 'logs')
 try {
   require('fs').mkdirSync(logPath)
 } catch (err) {
@@ -29,7 +29,7 @@ Log4js.configure(logConfig, {cwd: logPath})
 
 if (!config.dev) {
   app.use(Log4js.koaLogger(Log4js.getLogger('http'), {level: 'auto'}))
-}*/
+}
 
 // Instantiate nuxt.js
 const nuxt = new Nuxt(config)
@@ -43,14 +43,10 @@ if (config.dev) {
   })
 }
 
-/*app.use(async (ctx, next) => {
-  ctx.Log4js = Log4js
-  await next()
-})*/
 
 (AutoRoutes as any).auto(app)
 
-app.use(ctx => {
+app.use( (ctx: any) => {
   ctx.status = 200 // koa defaults to 404 when it sees that status is unset
   return new Promise((resolve, reject) => {
     ctx.res.on('close', resolve)
@@ -62,8 +58,13 @@ app.use(ctx => {
   })
 })
 
-app.on('error', function (err, ctx) {
- // logger.error('server error', err, ctx)
+app.use(async (ctx: any, next: any) => {
+  ctx.Log4js = Log4js
+  await next()
+})
+
+app.on('error', function (err: any, ctx: any) {
+ logger.error('server error', err, ctx)
 })
 
 app.listen(port, host as any)

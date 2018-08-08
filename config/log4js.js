@@ -1,33 +1,17 @@
 export default {
-  'appenders': [
-    {
-      'type': 'console'
-    },
-    {
-      'type': 'clustered',
-      'appenders': [
-        {
-          'type': 'dateFile',
-          'filename': 'http.log',
-          'pattern': '-yyyy-MM-dd',
-          'category': 'http'
-        },
-        {
-          'type': 'file',
-          'filename': 'app.log',
-          'maxLogSize': 10485760,
-          'pattern': '-yyyy-MM-dd',
-          'numBackups': 5
-        },
-        {
-          'type': 'logLevelFilter',
-          'level': 'ERROR',
-          'appender': {
-            'type': 'file',
-            'filename': 'errors.log'
-          }
-        }
-      ]
-    }
-  ]
+  appenders: {
+    out: { type: 'console' }, 
+    task: { type: 'dateFile', filename: 'logs/task',"pattern":"-yyyy-MM-dd.log", alwaysIncludePattern:true }, 
+    result: { type: 'dateFile', filename: 'logs/result',"pattern":"-yyyy-MM-dd.log", alwaysIncludePattern:true}, 
+    error: { type: 'dateFile', filename: 'logs/error', "pattern":"-yyyy-MM-dd.log", alwaysIncludePattern:true}, 
+    default: { type: 'dateFile', filename: 'logs/default', "pattern":"-yyyy-MM-dd.log", alwaysIncludePattern:true}, 
+    rate: { type: 'dateFile', filename: 'logs/rate', "pattern":"-yyyy-MM-dd.log", alwaysIncludePattern:true} 
+  },
+  categories: {
+    default: { appenders: ['out','default'], level: 'info' },
+    task: { appenders: ['task'], level: 'info'},
+    result: { appenders: ['result'], level: 'info' },
+    error: { appenders: ['error'], level: 'error' },
+    rate: { appenders: ['rate'], level: 'info' }
+  }
 }
