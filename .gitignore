@@ -23,5 +23,5 @@ server/logs
 config/app.js
 
 # test
-#test/unit/coverage
+test/unit/coverage
 test/unit/specs/client/__snapshots__
