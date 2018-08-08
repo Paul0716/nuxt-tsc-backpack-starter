@@ -16,7 +16,7 @@ module.exports = {
   transform: {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest',
     '^.+\\.ts$': 'ts-jest',
-    '.*\\.(vue)$': '<rootDir>/node_modules/jest-vue-preprocessor'
+    '.*\\.(vue)$': '<rootDir>/node_modules/vue-jest'
   },
   testPathIgnorePatterns: [
     '<rootDir>/test/e2e'

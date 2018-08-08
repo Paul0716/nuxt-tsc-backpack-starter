@@ -21,3 +21,7 @@ server/logs
 
 # config/app.js
 config/app.js
+
+# test
+#test/unit/coverage
+test/unit/specs/client/__snapshots__
