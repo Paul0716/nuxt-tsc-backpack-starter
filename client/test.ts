@@ -1,2 +1,3 @@
-const a:number = 5
-export default a
+export const test = (num: number)=>{
+    return 5 * num;
+}
