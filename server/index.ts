@@ -1,7 +1,7 @@
 import Koa from 'koa'
 import path from 'path'
 import Log4js from 'koa-log4'
-import AutoRoutes from './autoRoutes'
+import * as AutoRoutes from './autoRoutes'
 import logConfig from '../config/log4js'
 
 import {Nuxt, Builder} from 'nuxt'
@@ -42,7 +42,6 @@ if (config.dev) {
     process.exit(1)
   })
 }
-
 
 (AutoRoutes as any).auto(app)
 

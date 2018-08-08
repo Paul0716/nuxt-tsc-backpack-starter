@@ -4,8 +4,8 @@
 const router = require('koa-router')()
 const path = require('path')
 const fs = require('fs')
-var exports = {}
-exports['auto'] = function (app) {
+const ex = {}
+ex['auto'] = function (app) {
   let files = fs.readdirSync(path.join(__dirname, 'controllers'))
 
   let jsFiles = files.filter((f) => {
@@ -16,9 +16,9 @@ exports['auto'] = function (app) {
   for (let f of jsFiles) {
     console.log(`import controller from file ${f}...`)
     let name = f.substring(0, f.length - 3)
-    exports[name] = require('./controllers/' + f)
-    router.use('/' + name, exports[name].routes(), exports[name].allowedMethods())
-    app.use(exports[name].routes(), exports[name].allowedMethods())
+    ex[name] = require('./controllers/' + f)
+    router.use('/' + name, ex[name].routes(), ex[name].allowedMethods())
+    app.use(ex[name].routes(), ex[name].allowedMethods())
   }
 }
-module.exports = exports
+module.exports = ex
