@@ -17,16 +17,28 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['~assets/css/main.css'],
+  css: [
+    '~/../node_modules/bootstrap/dist/css/bootstrap.min.css',
+    '~assets/css/main.css'
+  ],
   /*
   ** Customize the progress-bar color
   */
   loading: { color: '#3B8070' },
+  /**
+   * Add Nuxt Plugins
+   */
+  plugins: [
+    "~/plugins/uix",
+  ],
   /*
    ** Add axios globally
    */
   build: {
-    vendor: ['axios'],
+    vendor: [
+      'axios',
+      'uiv'
+    ],
     /*
      ** Run ESLINT on save
      */

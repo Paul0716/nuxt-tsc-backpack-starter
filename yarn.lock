@@ -1303,6 +1303,10 @@ boom@2.x.x:
   dependencies:
     hoek "2.x.x"
 
+bootstrap@3.3.7:
+  version "3.3.7"
+  resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-3.3.7.tgz#5a389394549f23330875a3b150656574f8a9eb71"
+
 boxen@^1.2.1:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/boxen/-/boxen-1.3.0.tgz#55c6c39a8ba58d9c61ad22cd877532deb665a20b"
@@ -8454,6 +8458,12 @@ uglifyjs-webpack-plugin@^1.1.8:
     webpack-sources "^1.1.0"
     worker-farm "^1.5.2"
 
+uiv@^0.25.1:
+  version "0.25.1"
+  resolved "https://registry.yarnpkg.com/uiv/-/uiv-0.25.1.tgz#f3165d394f358ff21c5af4d88213c1b0e09713e2"
+  dependencies:
+    vue-functional-data-merge "^2.0.3"
+
 undefsafe@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/undefsafe/-/undefsafe-2.0.2.tgz#225f6b9e0337663e0d8e7cfd686fc2836ccace76"
@@ -8672,6 +8682,10 @@ vm-browserify@0.0.4:
 vue-class-component@^6.0.0, vue-class-component@^6.0.2, vue-class-component@^6.2.0:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/vue-class-component/-/vue-class-component-6.2.0.tgz#7adb1daa9a868c75f30f97f33f4f1b94aee62089"
+
+vue-functional-data-merge@^2.0.3:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/vue-functional-data-merge/-/vue-functional-data-merge-2.0.6.tgz#f08055adfb92458debcf2ad10c3aa712277f7fc2"
 
 vue-hot-reload-api@^2.2.0:
   version "2.3.0"

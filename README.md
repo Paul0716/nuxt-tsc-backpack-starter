@@ -27,3 +27,6 @@ using a prerelease version of Node (i.e. v7.6.0-rc.1) you will need to either:
   2. Run `yarn` with a standard release of Node and then switch back
 
 For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+
+#### Main Library Usage
+[Vue components with Bootstrap 3 (uiv)](https://github.com/wxsms/uiv)
