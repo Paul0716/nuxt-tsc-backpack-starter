@@ -1,7 +1,7 @@
 import Koa from 'koa'
 import path from 'path'
 import Log4js from 'koa-log4'
-import * as AutoRoutes from './autoRoutes'
+import AutoRoutes from './autoRoutes'
 import logConfig from '../config/log4js'
 
 import {Nuxt, Builder} from 'nuxt'

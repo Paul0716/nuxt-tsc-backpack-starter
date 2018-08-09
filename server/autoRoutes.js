@@ -21,4 +21,4 @@ ex['auto'] = function (app) {
     app.use(ex[name].routes(), ex[name].allowedMethods())
   }
 }
-module.exports = ex
+export default ex
