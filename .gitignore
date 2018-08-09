@@ -17,6 +17,7 @@ build
 .idea
 
 # server/logs
+logs
 server/logs
 
 # config/app.js
