@@ -28,6 +28,30 @@
         <div class="curve">
           <svg width="360" height="720" xmlns="http://www.w3.org/2000/svg">
             <path d="M0 0 Q400 360,0 720" stroke="#8c8c8c" stroke-width="2" fill="transparent"/>
+            <!-- one -->
+            <circle cx="30" cy="30" r="10" stroke="#8c8c8c" stroke-width="1" fill="white" />
+            <text x="65" y="35">Icon Title One</text>
+
+            <!-- two -->
+            <circle cx="90" cy="95" r="10" stroke="#8c8c8c" stroke-width="1" fill="white" />
+            <text x="120" y="100">Icon Title Two</text>
+
+            <!-- three -->
+            <circle cx="140" cy="160" r="10" stroke="#8c8c8c" stroke-width="1" fill="white" />
+            <text x="170" y="165">Icon Title Three</text>
+
+            <!-- four -->
+            <circle cx="140" cy="570" r="10" stroke="#8c8c8c" stroke-width="1" fill="white" />
+            <text x="170" y="575">Icon Title Four</text>
+
+            <!-- five -->
+            <circle cx="90" cy="630" r="10" stroke="#8c8c8c" stroke-width="1" fill="white" />
+            <text x="120" y="635">Icon Title Five</text>
+
+            <!-- six -->
+            <circle cx="30" cy="690" r="10" stroke="#8c8c8c" stroke-width="1" fill="white" />
+            <text x="60" y="695">Icon Title Six</text>
+
           </svg>
         </div>
         
@@ -146,14 +170,15 @@
     z-index: 100;
     position: relative;
     margin: 1em auto;
-    width: $hex-size; height: ($hex-size * 1.7);
+    width: $hex-size;
+    height: ($hex-size * 1.7);
     background: #ccc;
     transform: rotate(-90deg);
     display: inline-block;
-    margin-right: ($hex-size / 1.30);
+    margin-right: ($hex-size / 1.10);
     transition: all 150ms ease-in-out;
 
-    /* to  */
+    /* to hide middle hex  */
     &.invisible {
       opacity: 0;
       cursor: initial;
@@ -161,7 +186,8 @@
 
     &:before, &:after {
       position: absolute;
-      width: inherit; height: inherit;
+      width: inherit;
+      height: inherit;
       border-radius: inherit;
       background: inherit;
       content: '';
