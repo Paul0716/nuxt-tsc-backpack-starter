@@ -9,7 +9,7 @@ const maxRadius = 40
 const minRadius = 2
 
 export {
-  colorArray, 
+  colorArray,
   maxRadius,
-  minRadius,
+  minRadius
 }
