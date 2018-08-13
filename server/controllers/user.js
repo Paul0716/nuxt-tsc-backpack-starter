@@ -3,7 +3,7 @@
  */
 import services from '../../helper/services'
 import { query }  from "../async-db"
-import * as mail from '../mail/nodeMailerWithTamp'
+import * as mail from '../mail/mailer'
 const router = require('koa-router')()
 router.get('/index', async function (ctx, next) {
   let advList = await services.local.getUserList()
@@ -36,9 +36,7 @@ getData();*/
 })
 
 router.get('/mail', async function (ctx, next){
-
-  mail.sendPasswordReset('edward.lim@redcypress.com.tw', 'Edward','Edward','http://yourdomain.com/some-password-links')
-
+  mail.sendMail()
 })
 
 module.exports = router

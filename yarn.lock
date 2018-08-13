@@ -77,6 +77,10 @@
     "@types/keygrip" "*"
     "@types/node" "*"
 
+"@types/email-templates@^3.5.0":
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/@types/email-templates/-/email-templates-3.5.0.tgz#065278d22cacab7324d4c90d0ee4377786e3b488"
+
 "@types/events@*":
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/@types/events/-/events-1.2.0.tgz#81a6731ce4df43619e5c8c945383b3e62a89ea86"
@@ -144,6 +148,17 @@
 "@types/node@*":
   version "10.5.7"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.7.tgz#960d9feb3ade2233bcc9843c918d740b4f78a7cf"
+
+"@types/nodemailer@^4.6.2":
+  version "4.6.2"
+  resolved "https://registry.yarnpkg.com/@types/nodemailer/-/nodemailer-4.6.2.tgz#4a0cf246846cc5178270d354a252394a16860191"
+  dependencies:
+    "@types/events" "*"
+    "@types/node" "*"
+
+"@types/pug@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@types/pug/-/pug-2.0.4.tgz#8772fcd0418e3cd2cc171555d73007415051f4b2"
 
 "@types/range-parser@*":
   version "1.2.2"
