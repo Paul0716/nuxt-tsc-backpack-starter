@@ -3,6 +3,7 @@
  */
 import services from '../../helper/services'
 import { query }  from "../async-db"
+import * as mail from '../mail/mailer'
 const router = require('koa-router')()
 router.get('/index', async function (ctx, next) {
   let advList = await services.local.getUserList()
@@ -32,6 +33,10 @@ getData();*/
       name: 'yihang', age: '18'
     }
   ]
+})
+
+router.get('/mail', async function (ctx, next){
+  mail.sendMail('edward.lim@cypress.com.tw')
 })
 
 module.exports = router
