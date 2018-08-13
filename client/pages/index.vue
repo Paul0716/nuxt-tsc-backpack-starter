@@ -1,8 +1,7 @@
 <template>
   <div class="container-fluid">
 
-    <!-- Banner -->
-    <div class="row banner"></div>
+    <banner/>
 
     <!-- Ideas -->
     <div class="row">
@@ -69,7 +68,7 @@
     </div>
 
     <!-- Products List -->
-    <mg-plus-products />
+    <products />
 
     <div class="row">
       <!-- carousel -->
@@ -88,15 +87,16 @@
     </div>
 
     <!-- Contact From -->
-    <mg-plus-contact />
+    <contact />
   </div>
 
 </template>
 <script>
   import {mapMutations, mapGetters} from 'vuex'
   import services from '../../helper/services'
-  import mgPlusProducts from '../components/Products.vue'
-  import mgPlusContact from '../components/Contact.vue'
+  import products from '../components/Products.vue'
+  import contact from '../components/Contact.vue'
+  import banner from '../components/Banner.vue'
   export default {
     async asyncData ({ req }) {
       let advList = await services.local.getUserList()
@@ -134,20 +134,14 @@
       ...mapGetters(['counter'])
     },
     components: {
-      mgPlusProducts,
-      mgPlusContact
+      products,
+      contact,
+      banner
     }
   }
 </script>
 
 <style scoped lang="scss">
-  .banner {
-    min-height: 480px;
-    background-image: url(../assets/img/demo.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
 
   /* hexgen css block */
   $hex-size: 6em; 
