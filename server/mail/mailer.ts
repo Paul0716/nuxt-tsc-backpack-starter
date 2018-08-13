@@ -1,25 +1,22 @@
 import nodeMailer from 'nodemailer'
 import pug from 'pug'
 
-const sender = 'nnnuuuooon@gmail.com'   
-const password = 'Nuon0987' 
 const transporter = nodeMailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
+    host: process.env.MAIL_SMTP,
+    port: process.env.MAIL_PORT as any,
     secure: false, 
     auth: {
-        user: sender, 
-        pass: password 
+        user: process.env.MAIL_USERNAME, 
+        pass: process.env.MAIL_PASSWORD 
     }
 });
 
-export const sendMail = () => {
-    
+export const sendMail = (receiver: string) => {
     const myTemplate = pug.compileFile('server/mail/templates/contact/html.pug')
     const mySubject = pug.compileFile('server/mail/templates/contact/subject.pug')
     const mailOptions = {
-        from: '"Sample Mail 👻" <nnnuuuooon@gmail.com>', 
-        to: 'dreamingdexiaoxiaohao@gmail.com', 
+        from: `"Sample Mail 👻" <${process.env.MAIL_USERNAME}>`, 
+        to: receiver, 
         subject: mySubject({name: 'test'}),
         html: myTemplate({name: 'test'})
     }
@@ -31,5 +28,4 @@ export const sendMail = () => {
         // Preview only available when sending through an Ethereal account
         console.log('Preview URL: %s', nodeMailer.getTestMessageUrl(info));
     })
-
 }

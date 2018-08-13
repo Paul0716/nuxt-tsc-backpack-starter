@@ -36,7 +36,7 @@ getData();*/
 })
 
 router.get('/mail', async function (ctx, next){
-  mail.sendMail()
+  mail.sendMail('edward.lim@cypress.com.tw')
 })
 
 module.exports = router
