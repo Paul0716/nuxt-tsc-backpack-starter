@@ -3,8 +3,9 @@ import path from 'path'
 import Log4js from 'koa-log4'
 import AutoRoutes from './autoRoutes'
 import logConfig from '../config/log4js'
-
 import {Nuxt, Builder} from 'nuxt'
+import dotenv from 'dotenv'
+dotenv.config()
 const app = new Koa()
 const logger = Log4js.getLogger('app')
 const host = process.env.HOST || '127.0.0.1'

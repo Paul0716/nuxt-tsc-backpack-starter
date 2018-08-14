@@ -26,3 +26,6 @@ config/app.js
 # test
 test/unit/coverage
 test/unit/specs/client/__snapshots__
+
+# env variables
+.env
