@@ -8,13 +8,10 @@
                 <div class="article-title">Full steam ahead for Fortunium!</div>
                 <span class="article-date"><em class="date-icon"></em>2018 Jun. 20</span>
                 <div class="article-content" v-html="content"></div>
-                <hr/>
-                <div>
-                    <div class="comment-content">“It is a very exciting time for us, with the release of our first official Stormcraft Studios game. Microgaming did an amazing job of launching Fortunium at ICE Totally Gaming in London earlier this year, which has created quite a buzz of expectation in the industry. There has been a very positive response to our prioritising of the portrait play experience on mobile, which we believe is a key differentiator for our studio.”</div>
-                    <div class="comment-author">Terence Igesund</div>
-                    <div class="comment-author-title">Creative Director at Stormcraft Studios</div>
+                <div v-for="comment in comments" :key="comment">
+                    <hr/>
+                    <Comment :contentProp="comment.content" :authorProp="comment.author"/>
                 </div>
-                <hr/>
                 <div class="back-button"><div class="back-button-text">Back</div></div>
             </div>
         </div>
@@ -24,7 +21,14 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Component } from 'nuxt-property-decorator'
-@Component
+import Comment from '../../components/news/comment.vue'
+import UserComment from '../../models/comment'
+
+@Component({
+    components:{
+        Comment
+    }
+})
 export default class SingleNews extends Vue{
     readonly articleContent = `ISLE OF MAN – Microgaming presents Fortunium, created by Stormcraft Studios, a new independent game studio that will be supplying exclusive content to Microgaming.
 
@@ -42,6 +46,11 @@ Fortunium’s soaring skyline provides the backdrop in free spins, which can con
 
 Hidden fortunes await in the golden city of Fortunium, which is now live on all platforms`
 
+    comments = [
+        new UserComment(),
+        new UserComment()
+    ]
+
     get content () {
         return this.articleContent.replace(/\n/g, "<br />")
     }
@@ -50,29 +59,6 @@ Hidden fortunes await in the golden city of Fortunium, which is now live on all 
 
 
 <style scoped>
-    .comment-content{
-        font-family: Lato;
-        font-size: 24px;
-        font-weight: 600;
-        font-style: normal;
-        font-stretch: normal;
-        line-height: normal;
-        letter-spacing: normal;
-        color: #2d82e1;
-    }
-
-    .comment-author{
-        font-size: 14px;
-        line-height: 1.71;
-        color: #424242;
-    }
-
-    .comment-author-title{
-        font-size: 14px;
-        line-height: 1.71;
-        color: #9e9e9e;
-    }
-
     .feature-image{
         height: 635px;
         width: 100vw;
