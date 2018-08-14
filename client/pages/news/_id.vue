@@ -5,10 +5,10 @@
         </div>
         <div class="row">
             <div class="article">
-                <div class="article-title">Full steam ahead for Fortunium!</div>
-                <span class="article-date"><em class="date-icon"></em>2018 Jun. 20</span>
+                <div class="article-title">{{news.title}}</div>
+                <span class="article-date"><em class="date-icon"></em>{{news.date}}</span>
                 <div class="article-content" v-html="content"></div>
-                <div v-for="comment in comments" :key="comment">
+                <div v-for="(comment,index) in news.comments" :key="index">
                     <hr/>
                     <Comment :contentProp="comment.content" :authorProp="comment.author"/>
                 </div>
@@ -23,6 +23,8 @@ import Vue from 'vue'
 import { Component } from 'nuxt-property-decorator'
 import Comment from '../../components/news/comment.vue'
 import UserComment from '../../models/comment'
+import News from '../../models/news'
+import { Getter } from 'vuex-class'
 
 @Component({
     components:{
@@ -30,29 +32,18 @@ import UserComment from '../../models/comment'
     }
 })
 export default class SingleNews extends Vue{
-    readonly articleContent = `ISLE OF MAN – Microgaming presents Fortunium, created by Stormcraft Studios, a new independent game studio that will be supplying exclusive content to Microgaming.
+    @Getter('news/allNews') allNews!: News[]
 
-Made up of industry pioneers with decades of experience and a legacy of commercial success, Stormcraft Studios is dedicated to crafting epic gaming content which will be available exclusively to Microgaming operators.
+    async fetch ({ store, params }:any) {
+        await store.dispatch('news/getAllNews')
+    }
 
-Microgaming proudly presents Fortunium, a five by five reel, steampunk themed slot, and the first official release under the new Stormcraft Studios brand. Loaded with thrilling features brought to life by stunning artwork, the thriving metropolis of Fortunium is the ultimate destination for innovators and entrepreneurs seeking acclaim and fortune.
-
-Welcoming players to the city are its famous founders, Victoria, expert navigator and acclaimed explorer, and Maximillian, industrious inventor of mechanical marvels. Both characters can appear as super stacked symbols in the game, vividly portrayed in portrait mode with incredible graphics that have been finely tuned to give players a premium mobile experience.
-
-Opulence and opportunity await in base game, where super stacked Mystery Symbols can reveal a random wild, low or high symbol, granting players the chance to win big across multiple lines.
-
-Daring explorers can upgrade Mystery Symbols with the Win Booster™ device. When activated, the feature will increase the player’s wager by 50% and turn the Mystery Symbols into only high and wild symbols. Boosted Mystery Symbols will carry over into free spins, where they will remain boosted throughout the round.
-
-Fortunium’s soaring skyline provides the backdrop in free spins, which can contain up to three Mystery Reels™. These special reels are loaded with never-ending stacks of Mystery Symbols that can appear on every spin. Landing scatters during the feature will extend the free spins experience, giving players the opportunity to supercharge their rewards.
-
-Hidden fortunes await in the golden city of Fortunium, which is now live on all platforms`
-
-    comments = [
-        new UserComment(),
-        new UserComment()
-    ]
+    get news() {
+        return this.allNews.length > 0 ? this.allNews[0] : new News()
+    }
 
     get content () {
-        return this.articleContent.replace(/\n/g, "<br />")
+        return this.news.content.replace(/\n/g, "<br />")
     }
 }
 </script>
@@ -67,12 +58,10 @@ Hidden fortunes await in the golden city of Fortunium, which is now live on all 
 
     .article{
         margin: 70px auto;
-        width: 1080px;
+        max-width: 1080px;
     }
 
     .article-title {
-        width: 725px;
-        height: 28px;
         font-family: Lato;
         font-size: 36px;
         font-weight: 600;
@@ -99,7 +88,6 @@ Hidden fortunes await in the golden city of Fortunium, which is now live on all 
     .article-content {
         margin-top: 40px;
         margin-bottom: 36px;
-        width: 1080px;
         font-family: Lato;
         font-size: 14px;
         font-weight: 600;
