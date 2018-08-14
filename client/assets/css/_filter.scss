@@ -1,0 +1,57 @@
+@import './_theme.scss';
+
+.filter-area {
+  margin-top: 20px;
+}
+
+.filter {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 21px;
+  padding: 8px 16px;
+  width: $filterWidth;
+  height: $filterHeight;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  float:left;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 16px;
+
+  &.live {
+    color: $live;
+    border-color: $live;
+  }
+
+  &.slots {
+    color: $slots;
+    border-color: $slots;
+  }
+
+  &.fun {
+    color: $fun;
+    border-color: $fun;
+  }
+  
+  &.plus {
+    color: $plus;
+    border-color: $plus;
+  }
+}
+
+.category {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 21px;
+  padding: 8px 16px;
+  height: $categoryHeight;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  float:left;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 16px;
+
+  color: $category;
+  border-color: $category;
+}

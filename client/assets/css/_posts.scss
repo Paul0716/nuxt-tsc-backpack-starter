@@ -1,0 +1,36 @@
+@import './_theme.scss';
+
+@mixin postSpace {
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 8px;
+}
+
+.post-area {
+  margin-top: 20px;
+
+  .post-container {
+    box-shadow: 2px -2px 2px 1px #e0e0e0;
+    margin-bottom: 20px;
+
+    .filter {
+      margin-top: 12px;
+      margin-bottom: 20px;
+    }
+
+    .post-content {
+      @include postSpace();
+      max-height: 76px;
+      overflow: hidden;
+    }
+
+    .post-date {
+      @include postSpace();
+
+      > span {
+        margin-left: 12px;
+      }
+    }
+  }
+}
+
