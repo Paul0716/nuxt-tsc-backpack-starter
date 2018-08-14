@@ -45,7 +45,7 @@ if (config.dev) {
 
 (AutoRoutes as any).auto(app)
 
-app.use( (ctx: any) => {
+app.use((ctx: any) => {
   ctx.status = 200 // koa defaults to 404 when it sees that status is unset
   return new Promise((resolve, reject) => {
     ctx.res.on('close', resolve)
