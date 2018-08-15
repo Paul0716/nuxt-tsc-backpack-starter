@@ -133,4 +133,35 @@ export default class SingleNews extends Vue{
         letter-spacing: normal;
         text-align: center;
     }
+
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+        .article{
+            max-width: 944px;
+        }
+
+        .feature-image{
+            height: 451.6px;
+        }
+    }
+
+    @media screen and (min-width: 320px) and (max-width: 768px) {
+        .article{
+            max-width: 688px;
+        }
+
+        .feature-image{
+            height: 341px;
+        }
+    }
+
+    @media screen and (max-width: 320px) {
+        .article{
+            max-width: 288px;
+        }
+
+        .feature-image{
+            height: 340px;
+        }
+    }
+   
 </style>
