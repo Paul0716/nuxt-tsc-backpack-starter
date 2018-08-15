@@ -6,6 +6,7 @@ import AutoRoutes from './autoRoutes'
 import logConfig from '../config/log4js'
 import {Nuxt, Builder} from 'nuxt'
 import dotenv from 'dotenv'
+import Static from 'koa-static'
 dotenv.config()
 const app = new Koa()
 app.use(bodyParser())
@@ -16,6 +17,13 @@ const port = process.env.PORT || 3000
 // Import and Set Nuxt.js options
 let config = require('../nuxt.config.js')
 config.dev = !(app.env === 'production')
+
+const staticPath = './static'
+
+app.use(Static(
+  path.join( __dirname,  staticPath)
+))
+
 
 // 生成logs目录 && 加载配置文件 start
 const logPath = path.join(__dirname, 'logs')

@@ -15,7 +15,7 @@ export const state: ()=>IState = () => ({
   
 export const getters: {[key:string]:(state:IState)=>any} = {
     loadedNews (state) {
-        return state.loadedNews
+        return state.loadedNews || new News()
     }
 }
 

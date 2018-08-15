@@ -1,4 +1,5 @@
-const news = {
+export default [{
+    id: 'full-steam-ahead-for-fortunium',
     content : `ISLE OF MAN – Microgaming presents Fortunium, created by Stormcraft Studios, a new independent game studio that will be supplying exclusive content to Microgaming.
 
     Made up of industry pioneers with decades of experience and a legacy of commercial success, Stormcraft Studios is dedicated to crafting epic gaming content which will be available exclusively to Microgaming operators.
@@ -16,33 +17,5 @@ const news = {
     Hidden fortunes await in the golden city of Fortunium, which is now live on all platforms`,
     title : `Full steam ahead for Fortunium!`,
     date : `2018 Jun. 20`,
-    comments : [{
-        content : `“It is a very exciting time for us, with the release of our first official Stormcraft Studios game. Microgaming did an amazing job of launching Fortunium at ICE Totally Gaming in London earlier this year, which has created quite a buzz of expectation
-    in the industry. There has been a very positive response to our prioritising of the portrait play experience on mobile, which we believe is a key differentiator for our studio.”`,
-        author : {
-            name: `Terence Igesund`,
-            title: `Creative Director at Stormcraft Studios`
-        }
-    },
-    {
-        content : `“It is a very exciting time for us, with the release of our first official Stormcraft Studios game. Microgaming did an amazing job of launching Fortunium at ICE Totally Gaming in London earlier this year, which has created quite a buzz of expectation
-    in the industry. There has been a very positive response to our prioritising of the portrait play experience on mobile, which we believe is a key differentiator for our studio.”`,
-        author : {
-            name: `Terence Igesund`,
-            title: `Creative Director at Stormcraft Studios`
-        }
-    }
-    ]
-}
-
-const router = require('koa-router')()
-router.get('/index', async function (ctx, next) {
-    ctx.body = 'hello'
-})
-
-router.post('/getnews', async function (ctx, next){
-    console.log(ctx.request.body)
-    ctx.body = news
-})
-  
-module.exports = router
+    featureImage: '/images/news/fortunium-online-slot.jpg'
+}]
