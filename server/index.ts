@@ -1,4 +1,5 @@
 import Koa from 'koa'
+import bodyParser from 'koa-bodyparser'
 import path from 'path'
 import Log4js from 'koa-log4'
 import AutoRoutes from './autoRoutes'
@@ -7,6 +8,7 @@ import {Nuxt, Builder} from 'nuxt'
 import dotenv from 'dotenv'
 dotenv.config()
 const app = new Koa()
+app.use(bodyParser())
 const logger = Log4js.getLogger('app')
 const host = process.env.HOST || '127.0.0.1'
 const port = process.env.PORT || 3000

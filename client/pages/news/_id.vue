@@ -22,8 +22,7 @@
 import Vue from 'vue'
 import { Component } from 'nuxt-property-decorator'
 import Comment from '../../components/news/comment.vue'
-import UserComment from '../../models/comment'
-import News from '../../models/news'
+import { News } from '../../models'
 import { Getter } from 'vuex-class'
 
 @Component({
@@ -32,14 +31,10 @@ import { Getter } from 'vuex-class'
     }
 })
 export default class SingleNews extends Vue{
-    @Getter('news/allNews') allNews!: News[]
+    @Getter('news/loadedNews') news!: News
 
     async fetch ({ store, params }:any) {
-        await store.dispatch('news/getAllNews')
-    }
-
-    get news() {
-        return this.allNews.length > 0 ? this.allNews[0] : new News()
+        await store.dispatch('news/getNews', params.id)
     }
 
     get content () {

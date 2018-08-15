@@ -5,6 +5,10 @@ module.exports = {
       getUserList: {
         method: 'get',
         url: '/user/list'
+      },
+      getNews: {
+        method: 'post',
+        url: '/news/getnews'
       }
     }
   }
