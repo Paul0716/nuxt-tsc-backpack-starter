@@ -59,5 +59,8 @@ module.exports = {
   router: {
     middleware: 'auth'
   },
-  modules: ["nuxt-typescript"]
+  modules: ["nuxt-typescript"],
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  }
 }
