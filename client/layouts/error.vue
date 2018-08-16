@@ -21,7 +21,7 @@ export default {
 .container {
   margin: 0;
   width: 100%;
-  padding: 100px 0;
+  padding: 315px 0;
   text-align: center;
   background-color: #fafafa;
 }
@@ -113,6 +113,17 @@ export default {
   color:#fafafa;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .container {
+       padding: 187px 0;
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 768px) {
+  .container {
+       padding: 394px 0;
+    }
+}
 
 @media screen and (max-width: 768px) {
     .title {
@@ -126,6 +137,9 @@ export default {
     }
     .error-img {
       height: 52px;
+    }
+    .container {
+       padding: 166px 0;
     }
 }
 
