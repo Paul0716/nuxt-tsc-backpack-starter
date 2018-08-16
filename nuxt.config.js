@@ -44,12 +44,12 @@ module.exports = {
      */
     extend (config, ctx) {
       if (ctx.isClient) {
-        // config.module.rules.push({
-        //   enforce: 'pre',
-        //   test: /\.(js|vue)$/,
-        //   loader: 'eslint-loader',
-        //   exclude: /(node_modules)/
-        // })
+         config.module.rules.push({
+           enforce: 'pre',
+           test: /\.(js|ts)$/,
+           loader: 'eslint-loader',
+           exclude: /(node_modules|server|config|helper)/
+         })
         tsLoader(config);
       }
     }
