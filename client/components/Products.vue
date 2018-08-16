@@ -1,41 +1,89 @@
 <template>
-  <section class="row product-section">
+  <div class="row">
+    <section class="product-section">
 
-    <!-- Mg Plus Fun -->
-    <div class="col-xs-4 product-intro">
-      <h3 class="text-center">Mg Plus Fun</h3>
-    </div>
+      <div class="product-intro">
+        <div class="product-brand">
+          <img class="brand-img" src="~/assets/img/logo.png"/>
+        </div>
+        <p class="intro">Discover fun & interactive non-slot games thea will get platers hooked in no time!</p>
+      </div>
 
-    <!-- Mg Plus Live -->
-    <div class="col-xs-4 product-intro">
-      <h3 class="text-center">Mg Plus Live</h3>
-    </div>
+      <div class="product-intro">
+        <div class="product-brand">
+          <img class="brand-img" src="~/assets/img/logo.png"/>
+        </div>
+        <p class="intro">A revolutionary live dealer product engineered for the best mobile experience. Success? It's already in your hands.</p>
+      </div>
 
-    <!-- Mg Plus Slot -->
-    <div class="col-xs-4 product-intro">
-      <h3 class="text-center">Mg Plus Slot</h3>
-    </div>
-  </section>
+      <div class="product-intro">
+        <div class="product-brand">
+          <img class="brand-img" src="~/assets/img/logo.png"/>
+        </div>
+        <p class="intro">The largest and most diverse portfolio of gmes in the industry and the home of the biggest and best games in Asia. Step into our world now!</p>
+      </div>
+    </section>
+  </div>
+  
+  
 </template>
 
 <script lang="ts">
   import Vue from 'vue'
   import Component from 'nuxt-class-component'
+  import { TweenLite } from 'gsap'
   @Component
   export default class product extends Vue {
 
     mounted () {
+      const intros = Array.from(document.querySelectorAll('.product-intro'));
+      const introBaseWidth: number = window.innerWidth / intros.length;
+      for (let intro of intros) {
+        // intro base width
+        (intro as HTMLElement).style.width  = introBaseWidth + "px";
+        (intro as HTMLElement).style.height = introBaseWidth + "px";
+
+        // mouse event
+        intro.addEventListener('mouseover', (ev) => {
+          TweenLite.to(intro, 0.3, {css: {width: introBaseWidth + 250 + "px"}});
+        })
+        intro.addEventListener('mouseout', (ev) => {
+          TweenLite.to(intro, 0.3, {css: {width: introBaseWidth + "px"}});
+        })
+      }
+      
     }
   }
 </script>
 
 <style scoped lang="scss">
   .product-section{
+    display: table;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+    
     & > .product-intro {
-      padding-top: 150px;
-      padding-bottom: 150px;
-      min-height: 320px;
-      
+      cursor: pointer;
+      display: table-cell;
+      padding: 0;
+      height: 100%;
+      text-align: center;
+      vertical-align: middle;
+
+      .product-brand{
+        width: 60%;
+        margin: 0 auto;
+        img {
+          margin-bottom: 40px;
+        }
+      }
+      .intro {
+        color: white;
+        width: 60%;
+        margin: 0 auto;
+      }
     }
 
     & > .product-intro:first-child {

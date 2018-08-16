@@ -4,7 +4,7 @@
     <banner />
 
     <!-- Ideas -->
-    <div class="about-us">
+    <div class="about-us row">
       
       <!-- hexgen -->
       <div class="hexagon">
@@ -98,8 +98,7 @@
 <style scoped lang="scss">
 
   .about-us {
-    width: 100vw;
-    height: 60vh
+    height: 100vh
   }
 
   @media only screen and (min-width: 768px) {
