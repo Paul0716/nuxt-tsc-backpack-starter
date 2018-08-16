@@ -30,8 +30,12 @@ export default class SingleNews extends Vue{
       }
     }
 
-    async fetch ({ store, params }:any) {
-        await store.dispatch('news/getNews', params.id)
+    async fetch ({ store, params, error }:any) {
+        try {
+            await store.dispatch('news/getNews', params.id)
+        } catch (e) {
+            error({ statusCode: 404, message: 'Post not found' })
+        }
     }
 
     baseUrl = ''

@@ -1,9 +1,12 @@
 import NewsRepository from '../repositories/news'
 const newsRepository = new NewsRepository()
 
-class NewsService{
+class NewsService {
     getNews(id: string) {
-        return newsRepository.getNewsById(id);
+        const result = newsRepository.getNewsById(id)
+        if(!result) throw new Error('Post not found.')
+        
+        return result
     }
 }
 
