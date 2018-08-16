@@ -1,28 +1,32 @@
 @import './_theme.scss';
 
+@mixin filterBase() {
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 21px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-bottom: 16px;
+  float: left;
+}
+
 .filter-area {
   margin-top: 20px;
 }
 
 .filter {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 21px;
+  @include filterBase();
   padding: 8px 16px;
   width: $filterWidth;
-  height: $filterHeight;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  float:left;
-  margin-left: 6px;
-  margin-right: 6px;
-  margin-bottom: 16px;
+  height: $filterHeight;  
 
   &.live {
     color: $live;
-    border-color: $live;
+    border-color: $live; 
   }
-
+  
   &.slots {
     color: $slots;
     border-color: $slots;
@@ -32,26 +36,63 @@
     color: $fun;
     border-color: $fun;
   }
-  
+
   &.plus {
     color: $plus;
     border-color: $plus;
   }
+
+  &:hover {
+    color: $hoverTextColor;
+
+    &.live {  
+      background-color: $live;
+    }
+    
+    &.slots {
+      background-color: $slots;
+    }
+  
+    &.fun {
+      background-color: $fun;
+    }
+  
+    &.plus {
+      background-color: $plus;
+    }
+  }
+  
+  &.disabled {
+    color: $disableTextColor;
+    border-color: $disableBorderColor;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.7);
+      cursor: not-allowed;
+    }
+  }
 }
 
 .category {
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 21px;
+  @include filterBase();
   padding: 8px 16px;
   height: $categoryHeight;
-  text-align: center;
-  background-color: rgba(255, 255, 255, 0.7);
-  float:left;
-  margin-left: 6px;
-  margin-right: 6px;
-  margin-bottom: 16px;
 
   color: $category;
   border-color: $category;
+
+  &:hover {
+    color: $hoverTextColor;
+    background-color: $category;
+  }
+
+  &.disabled {
+    color: $disableTextColor;
+    border-color: $disableBorderColor;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.7);
+      cursor: not-allowed;
+    }
+  }
 }

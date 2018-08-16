@@ -12,13 +12,6 @@ html, body
   margin: 0;
 }
 
-footer
-{
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
-}
-
 a, a:hover, a:focus, a:visited
 {
   color: #41B883;
@@ -36,4 +29,9 @@ a, a:hover, a:focus, a:visited
 .page-enter, .page-leave-active
 {
   opacity: 0
+}
+
+
+.navbar {
+  margin-bottom: 0px;
 }
