@@ -19,7 +19,7 @@ module.exports = {
   */
   css: [
     '~/../node_modules/bootstrap/dist/css/bootstrap.min.css',
-    '~assets/css/main.css'
+    '~assets/css/main.scss'
   ],
   /*
   ** Customize the progress-bar color

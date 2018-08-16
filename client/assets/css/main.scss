@@ -1,3 +1,7 @@
+
+@import './_filter.scss';
+@import './_posts.scss';
+
 html, body
 {
   background-color: #fff;
@@ -6,13 +10,6 @@ html, body
   font-family: "Source Sans Pro", Arial, sans-serif;
   height: 100vh;
   margin: 0;
-}
-
-footer
-{
-  padding: 20px;
-  text-align: center;
-  border-top: 1px solid #ddd;
 }
 
 a, a:hover, a:focus, a:visited
@@ -32,4 +29,9 @@ a, a:hover, a:focus, a:visited
 .page-enter, .page-leave-active
 {
   opacity: 0
+}
+
+
+.navbar {
+  margin-bottom: 0px;
 }
