@@ -23,6 +23,7 @@ export default {
   width: 100%;
   padding: 100px 0;
   text-align: center;
+  background-color: #fafafa;
 }
 
 .title {
@@ -99,7 +100,7 @@ export default {
   text-align: center;
   color: #424242;
   display: inline-block;
-  background: white;
+  background: #fafafa;
   border-radius: 35px;
 }
 
@@ -109,7 +110,7 @@ export default {
 }
 .button:hover  .button-text {
   background: transparent;
-  color:white;
+  color:#fafafa;
 }
 
 
