@@ -1,4 +1,5 @@
 const tsLoader = require('./config/ts-loader')
+
 module.exports = {
   /*
   ** Headers of the page
@@ -57,6 +58,7 @@ module.exports = {
   cache: true,
   srcDir: 'client/',
   router: {
+    base:  process.env.BASE_URL ||  '/',
     middleware: 'auth'
   },
   modules: ["nuxt-typescript"],

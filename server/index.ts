@@ -7,6 +7,7 @@ import logConfig from '../config/log4js'
 import {Nuxt, Builder} from 'nuxt'
 import dotenv from 'dotenv'
 import Static from 'koa-static'
+import mount from 'koa-mount'
 dotenv.config()
 const app = new Koa()
 app.use(bodyParser())
@@ -20,9 +21,9 @@ config.dev = !(app.env === 'production')
 
 const staticPath = './static'
 
-app.use(Static(
+app.use(mount(process.env.BASE_URL || '/', Static(
   path.join( __dirname,  staticPath)
-))
+)))
 
 
 // 生成logs目录 && 加载配置文件 start
@@ -56,14 +57,15 @@ if (config.dev) {
 
 (AutoRoutes as any).auto(app)
 
-app.use((ctx: any) => {
+app.use( (ctx: any) => {
   ctx.status = 200 // koa defaults to 404 when it sees that status is unset
   return new Promise((resolve, reject) => {
     ctx.res.on('close', resolve)
     ctx.res.on('finish', resolve)
     nuxt.render(ctx.req, ctx.res, (promise:any) => {
       // nuxt.render passes a rejected promise into callback on error.
-      promise.then(resolve).catch(reject)
+      if(promise)
+        promise.then(resolve).catch(reject)
     })
   })
 })
