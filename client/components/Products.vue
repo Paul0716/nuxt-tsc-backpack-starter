@@ -49,7 +49,7 @@
         const introEl = intro as HTMLElement;
         if (window.innerWidth <= 768) { 
           introEl.style.width  = window.innerWidth + "px";
-          introEl.style.height = window.innerHeight/2 + "px";
+          introEl.style.height = window.innerHeight * 0.45 + "px";
         } else {
           introEl.style.width  = introBaseWidth + "px";
           introEl.style.height = introBaseWidth + "px";
@@ -106,6 +106,7 @@
           width: 60%;
           margin: 0 auto;
           img {
+            width: 100%;
             margin-bottom: 40px;
           }
         }
@@ -120,7 +121,7 @@
   // screen width < 768px
   @media screen and (max-width: 767px) {
     .product-section{
-      display: block;
+      display: table;
       margin: 0;
       padding: 0;
       width: 100%;
@@ -128,16 +129,18 @@
       
       & > .product-intro {
         cursor: pointer;
-        display: block;
+        display: table-row;
         padding: 0;
         height: 100%;
         text-align: center;
+        vertical-align: middle;
 
         .product-brand{
           padding-top: 60px;
           width: 54%;
           margin: 0 auto;
           img {
+            width: 100%;
             margin-bottom: 40px;
           }
         }
