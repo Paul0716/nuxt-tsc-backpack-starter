@@ -48,7 +48,7 @@ module.exports = {
            enforce: 'pre',
            test: /\.(js|ts)$/,
            loader: 'eslint-loader',
-           exclude: /(node_modules|server)/
+           exclude: /(node_modules)/
          })
         tsLoader(config);
       }
