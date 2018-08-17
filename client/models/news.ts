@@ -1,9 +1,7 @@
-import Comment from './comment'
-class News{
+class News {
     content: string = ''
     title: string = ''
     date: string = ''
-    comments: Comment[] = []
 }
 
 export default News

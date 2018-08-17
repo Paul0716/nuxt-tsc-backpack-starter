@@ -48,16 +48,13 @@
 </template>
 <script>
   import {mapMutations, mapGetters} from 'vuex'
-  import services from '../../helper/services'
   import products from '../components/Products.vue'
   import contact from '../components/Contact.vue'
   import banner from '../components/Banner.vue'
   export default {
     async asyncData ({ req }) {
-      let advList = await services.local.getUserList()
       return {
         name: req ? 'server' : 'client',
-        advList: advList
       }
     },
     head () {
