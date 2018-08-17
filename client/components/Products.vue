@@ -6,7 +6,7 @@
           target="_blank" 
           href="https://www.88mg88.online/#/home">
         <div class="product-brand">
-          <img class="brand-img" src="~/assets/img/products/mgfun.png"/>
+          <img class="brand-img" src="~/assets/img/products/mgslot.png"/>
         </div>
         <p class="intro">Discover fun & interactive non-slot games thea will get platers hooked in no time!</p>
       </a>
