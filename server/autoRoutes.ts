@@ -1,8 +1,10 @@
 import Router from 'koa-router'
 import path from 'path'
 import fs from 'fs'
+import dotenv from 'dotenv'
+dotenv.config()
 
-const router = new Router()
+const router = new Router({prefix: process.env.BASE_URL || ''})
 const autoRoutes: {[name:string]: any} = {}
 
 autoRoutes['auto'] =  (app: any) => {
