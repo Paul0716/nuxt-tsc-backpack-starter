@@ -2,26 +2,32 @@
   <div class="row">
     <section class="product-section">
 
-      <div class="product-intro">
+      <a  class="product-intro"
+          target="_blank" 
+          href="https://www.88mg88.online/#/home">
         <div class="product-brand">
           <img class="brand-img" src="~/assets/img/products/mgfun.png"/>
         </div>
         <p class="intro">Discover fun & interactive non-slot games thea will get platers hooked in no time!</p>
-      </div>
+      </a>
 
-      <div class="product-intro">
+      <a  class="product-intro"
+          target="_blank"
+          href="https://www.88mg88.online/#/home">
         <div class="product-brand">
           <img class="brand-img" src="~/assets/img/products/mgfun.png"/>
         </div>
         <p class="intro">A revolutionary live dealer product engineered for the best mobile experience. Success? It's already in your hands.</p>
-      </div>
+      </a>
 
-      <div class="product-intro">
+      <a  class="product-intro"
+          target="_blank" 
+          href="https://www.88mg88.online/#/livedealer">
         <div class="product-brand">
           <img class="brand-img" src="~/assets/img/products/mglive.png"/>
         </div>
         <p class="intro">The largest and most diverse portfolio of gmes in the industry and the home of the biggest and best games in Asia. Step into our world now!</p>
-      </div>
+      </a>
 
     </section>
   </div>
